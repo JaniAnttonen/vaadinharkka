@@ -1,0 +1,27 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../reindeer/reindeer.scss";
+
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin testinnggg {
+  /* Include all the styles from the reindeer theme */
+  @include reindeer;
+
+  /* Insert your theme rules here */
+  
+  .v-slot-example-gridlayout {
+  	font-size: 15px;
+  	position: relative;
+  	background: #ebebeb;
+  	padding: 30px;
+  }
+  
+  .title {
+    box-sizing: border-box;
+    color: #222;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+}

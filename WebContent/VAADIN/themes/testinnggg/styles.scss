@@ -1,0 +1,10 @@
+@import "addons.scss";
+@import "testinnggg.scss";
+@import "/bootstrap/css/bootstrap.min.css";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in testinnggg.scss */
+.testinnggg {
+  @include addons;
+  @include testinnggg;
+}
