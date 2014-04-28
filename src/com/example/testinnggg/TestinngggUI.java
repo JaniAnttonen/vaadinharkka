@@ -30,39 +30,33 @@ public class TestinngggUI extends UI {
         ebin.setWidth("100%");
         ebin.setHeight("100%");
 
-        // Testimielessä tehty (Book of Vaatimesta kopioitu) gridileiska, jossa
-        // nappeja ja kalenteri
-        final GridLayout grid = new GridLayout(2, 3);
-        grid.setWidth("100%");
-        grid.setHeight("100%");
-        grid.setMargin(true);
-
-        // Laitetaan sivu näytille
-        setContent(ebin);
-
-        // Lisätään VerticalLayoutin sisään meidän Gridileissi
-        ebin.addComponent(grid);
-
-        // Jotain kopiopastaa
-        grid.addStyleName("example-gridlayout");
-
         // Sivun (lol applikaation) otsikko
         Label title = new Label("Ebinedarivaalit 2014");
         title.setStyleName("title");
-        grid.addComponent(title);
+        ebin.addComponent(title);
 
         // Ehdokkaat
+        /*
+         * Lisätään VerticalLayoutin sisään GridLayout, joka sisältää
+         * ehdokaslistauksen.
+         */
+        final GridLayout grid = new GridLayout(2, 3);
+        grid.setWidth("100%");
+        ebin.addComponent(grid);
 
         // Äänestysnappi
         final Button vote = new Button("VOTE");
         vote.setStyleName("btn");
-        grid.addComponent(vote, 0, 2);
+        ebin.addComponent(vote);
 
         vote.addClickListener(new Button.ClickListener() {
             public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
                 grid.addComponent(new Label("SPAM"));
             }
         });
+
+        // Laitetaan sivu näytille
+        setContent(ebin);
 
     }
 }
